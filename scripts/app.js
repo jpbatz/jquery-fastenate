@@ -9,6 +9,7 @@ $(function() {
   }
 
   $("#nav_items #blogs").on("click", function() {
+
     $.ajax({
       type: "GET",
       url: "https://api.mongolab.com/api/1/databases/devleague_jquery/collections/blog_posts",
