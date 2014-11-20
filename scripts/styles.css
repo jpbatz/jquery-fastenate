@@ -12,140 +12,71 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
   clear: both;
 }
 
-/* is the vertical height of the page correct and adjusting correctly? */
-/*Don't use height, but there is white space under footer bar.  should window adjust to size? */
-
-/*body {*/
-/*    height: 100%;  */
-/*}*/
-
 
 /*HEADER*/
 
-/* what a hot mess!! */
-
 #header {
-    text-align: center; 
-    /*vertical-align: center;*/
-    /*position: relative;*/
+    text-align: center;
+    background-color: white;
+    position: fixed;
+    top: 0px;
     width: 100%;
-    /*might not be a good idea*/
-    /*height: 50px;  */
-/*display: block;*/
-/*background-repeat: no-repeat;*/
-    /*height: 10%;*/
-    /*margin: auto;*/
 }
 
 #header #header_bar {
     /*border: 1px solid blue;*/
-    text-align: center; 
     background-image: url("/images/header_bg.svg");
     background-repeat: no-repeat;
     background-position: center;
     display: block;
-    /*max-width: 430px;*/
-    /*margin-top: 10px;*/
-    /*margin-bottom: 20px;*/
-    /*margin-left: 130px;*/
-    /*padding-bottom: 50px;*/
-    /*height: 60%;*/
-    /*display: block;  */
-
-
-    /* Marifel: Set the actual logo as an img element in the HTML */
-    /*background-image: url("/images/logo.svg");*/
-
-    /*J: Kelli recommeded h1 span method, but i could not get it to work*/
-    
+    margin: auto;
 }
 
 #header #header_bar #h1_logo {
-
-    /*see html*/
     /*background-image: url("/images/logo.svg");*/
-    margin: auto;
-    
-    /*J: Attempt at Kelli's suggestion*/
-    
-    /*text-align: center;*/
-    /*max-width: 90px;*/
-    /*background-repeat: no-repeat;*/
-    /*border: 5px solid red;*/
-    /*vertical-align: middle;*/
-    /*margin-left: 140px;*/
-    /*padding-bottom: 20px;*/
-    /*padding-left: 50px;*/
 }
 
-#header #header_bar #h1_logo span {
+/*#header #header_bar #h1_logo span {*/
     /*border: 2px solid red;*/
-    
-    /*J: Attempt at Kelli's suggestion*/
-    /*visibility: hidden;*/
-    /*visibility: visible;*/
-    /*font-size: 30px;*/
-    
-    /*Marifel recommends:*/
-    display: none;
+/*    visible: hidden;
+}*/
 
-}
-
-/* unable to place to the right with proper vertical alignment */
-/* need to find a way to not use height and width */
 #header #header_bar #plus_button {
-    /*See Marifel's, below*/
     /*border: 2px solid #FF0000;*/
-    /*border-radius: 2px;*/
-    /*color: red;*/
-    /*text-align: right;*/
-    /*margin-top: 0px;*/
-    /*margin-right: 5px;*/
-    /*width: 8%;*/
-    /*height: 190%;*/
-    /*font-weight: bold;*/
-    /*position: relative;*/
-    /*float: right;*/
-    /*display: inline-block;*/
-    /*margin-left: 500px;*/
-    /*padding: 5px 0px;*/
-    
-    
-    /*J: This tolerates horizontal resizing of window*/
-    
-    /*Marifel's'*/
     border: 2px solid #FF0000;
     color: red;
     width: 26px;
     height: 26px;
     position: absolute;
-    float: none; /* No need to set to none if you remove float: right from above */
     top: 16px;
     right: 16px;
     font-size: 32px;
     text-decoration: none;
     line-height: 22px;
-    /* M: Now you just need to set the right border and color */
-    
+    border-radius: 4px;
 }
 
 
 /*The following maintains the button color through hover and clicks*/
 
 #header #header_bar #plus_button a:link {
-    color: #FF0000; text-decoration: none;
+    /*color: #FF0000; */
+    text-decoration: none;
 }
 
 #header #header_bar #plus_button a:active {
-    color: #FF0000; text-decoration: none;
+    /*color: #FF0000; */
+    text-decoration: none;
 }
 
 #header #header_bar #plus_button a:visited {
-    color: #FF0000; text-decoration: none;
+    /*color: #FF0000; */
+    text-decoration: none;
 }
 
 #header #header_bar #plus_button a:hover {
-    color: #FF0000; text-decoration: none;
+    /*color: #FF0000; */
+    text-decoration: none;
 }
 
 
@@ -155,39 +86,60 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     display: block;
     opacity: 0.8;
     background-color: black;
+    position: fixed;
+    width: 100%;
 }
 
-#header #nav_items {
-    text-align: center;
+#header #nav_bar #nav_items {
     padding: 10px 0px;
 }
 
-#header #nav_items>li {
+/*bg.jpg color instead of white text*/
+#header #nav_bar #nav_items li {
     display: inline-block;
     margin-right: 30px;
-    list-style-type: circle;  /*cannot get dots*/
     font-family: 'Oswald', sans-serif;
-    color: white;
-    opacity: 0.3;
     font-size: 14px;
 }
 
+#header #nav_bar #nav_items li a {
+    text-decoration: none;
+}
 
+#header #nav_bar #nav_items li a:link {
+    color: gray; 
+    text-decoration: none;
+}
+
+#header #nav_bar #nav_items li a:active {
+    /*color: #FF0000; */
+    text-decoration: none;
+}
+
+#header #nav_bar #nav_items li a:visited {
+    color: gray; 
+    text-decoration: none;
+}
+
+#header #nav_bar #nav_items li a:hover {
+    /*color: #FF0000; */
+    text-decoration: none;
+}
 
 /*SECTION*/
 
 #contents_section {
     background-image: url('/images/bg.jpg');
-    padding-top: 50px;
+    margin-top: 100px;
+    padding-top: 30px;
     padding-bottom: 50px;
-    display: block;
 }
 
 /*Content Items*/
 
 #contents_section #items {
+    max-width: 60%;
     display: block;
-    max-width: 85%;
     margin: auto;
 }
 
@@ -196,59 +148,53 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     padding: 10px;
     background-color: white;
     margin: 10px 0px;
-    /*margin: auto;*/
     font-family: 'Lato', sans-serif;
-/*    display: block;
-    float: left;
-    box-sizing: border-box;
-    width: 20%;*/
 }
 
 #contents_section #items .item_content .item_image {
     /*background-color: pink;*/
-    display: inline-block;
+    display: block;
     float:left;
-    width: 20%;
+    width: 25%;
     box-sizing: border-box;
 }
 
-/*cannot get images to work from here, they disappear, so had to do img in html markup*/
-#contents_section #items .item_content .item_image li img {
-/*    width: 150px;
-    height: 120px;*/
-    /*background-image: url("http://placehold.it/150x120");*/
+#contents_section #items .item_content .item_image img {
+    max-width: 100%;  /*keeps text from overlapping image when reducing window size*/
 }
-
-/* when uncommented, all goes south! */
 
 #contents_section #items .item_content .item_list {
     /*background-color: purple;*/
-/*    display: inline-block;
-    float: right;*/
-    width: auto;
-    opacity: 0.6;
-    /*box-sizing: border-box;*/
+    padding-left: 5px;
+    display: block;
+    float: right;
+    width: 75%;
+    opacity: 0.8;
+    box-sizing: border-box;
 }
 
 #contents_section #items .item_content .item_list .item_heading {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 #contents_section #items .item_content .item_list .item_status {
     /*border: 1px solid red;*/
-    display: inline-block;
+    display: inline;
     /*width: auto;*/
-    padding-right: 20px;
-    font-size: 15px;
+    font-size: 10px;
     opacity: 0.5;
-     /*don't know how to get the circles back, this does not work */
-    /*list-style-type: circle;*/
+}
+
+#contents_section #items .item_content .item_list .middot {
+    display: inline;
+    font-size: 20px;
+    opacity: 0.5;
 }
 
 #contents_section #items .item_content .item_list .item_detail {
-    font-size: 15px;
-    padding-top: 30px;
+    font-size: 10px;
+    padding-top: 15px;
 }
 
 /*FOOTER*/
@@ -257,10 +203,9 @@ footer {  /*cannot get images to work from here, they disappear, so had to do im
     opacity: 0.8;
     text-align: center;
     background-color: black;
-    /*background-image: url("/images/facebook_grey.svg");*/
-    /*background-image: url("/images/instagram_grey.svg");*/
-    /*background-repeat: no-repeat;*/
-    /*display: block;*/
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
 }
 
 footer img {
@@ -270,12 +215,16 @@ footer img {
 
 /*MEDIA QUERIES*/
 
+/*may combine tablets and desktop*/
+
 /* MOBILE ONLY */
 @media only screen and (max-width: 480px){
 }
+
 /* TABLET ONLY */
 @media only screen and (min-width: 481px) and (max-width: 768px){
 }
+
 /* DESKTOP ONLY */
 @media only screen and (min-width: 769px){
 }
