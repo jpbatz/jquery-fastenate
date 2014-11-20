@@ -1,0 +1,216 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+/*font-family: 'Oswald', sans-serif;*/
+@import url(http://fonts.googleapis.com/css?family=Lato);
+/*font-family: 'Lato', sans-serif;*/
+
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* is the vertical height of the page correct and adjusting correctly? */
+body {
+    height: 100%;  
+}
+
+/*HEADER*/
+
+/* what a hot mess!! */
+
+#header {
+    text-align: center; 
+    
+    /*vertical-align: center;*/
+    /*position: relative;*/
+    /*width: 100%;*/
+    /*might not be a good idea*/
+    /*height: 50px;  */
+    
+    /*display: block;*/
+    /*height: 10%;*/
+    /*margin: auto;*/
+}
+
+#header #header_bar {
+    /*border: 1px solid blue;*/
+    text-align: center; 
+    background-image: url("/images/header_bg.svg");
+    background-repeat: no-repeat;
+    max-width: 430px;
+    margin-top: 10px;
+    /*margin-bottom: 20px;*/
+    margin-left: 130px;
+    /*padding-bottom: 50px;*/
+    /*height: 60%;*/
+    /*display: block;  */
+}
+
+#header #header_bar #h1_logo {
+    text-align: center;
+    max-width: 90px;
+    background-image: url("/images/logo.svg");
+    background-repeat: no-repeat;
+    border: 5px solid red;
+    vertical-align: middle;
+    margin-left: 140px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+}
+
+#header #header_bar #h1_logo span {
+    border: 2px solid red;
+    visibility: hidden;
+    font-size: 30px;
+
+}
+
+/* unable to place to the right with proper vertical alignment */
+/* need to find a way to not use height and width */
+#header #header_bar #plus_button {
+    border: 2px solid #FF0000;
+    border-radius: 2px;
+    color: red;
+    /*text-align: right;*/
+    margin-top: 0px;
+    /*margin-right: 5px;*/
+    width: 8%;
+    /*height: 190%;*/
+    font-weight: bold;
+    position: relative;
+    /*float: right;*/
+display: inline-block;
+margin-left: 500px;
+padding: 5px 0px;
+}
+
+#header #header_bar #plus_button a:link {
+    color: #FF0000; text-decoration: none;
+}
+
+#header #header_bar #plus_button a:active {
+    color: #FF0000; text-decoration: none;
+}
+
+#header #header_bar #plus_button a:visited {
+    color: #FF0000; text-decoration: none;
+}
+
+#header #header_bar #plus_button a:hover {
+    color: #FF0000; text-decoration: none;
+}
+
+
+/*NAVIGATION*/
+
+#header #nav_bar {
+    display: block;
+    opacity: 0.8;
+    background-color: black;
+}
+
+#header #nav_items {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+#header #nav_items>li {
+    display: inline-block;
+    margin-right: 30px;
+    list-style-type: circle;  /*cannot get dots*/
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    opacity: 0.3;
+    font-size: 14px;
+}
+
+
+
+/*SECTION*/
+
+#contents_section {
+    background-image: url('/images/bg.jpg');
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: block;
+}
+
+/*Content Items*/
+
+#contents_section #items {
+    display: block;
+    max-width: 85%;
+    margin: auto;
+}
+
+#contents_section #items .item_content {
+    /*border: 1px solid black;*/
+    padding: 10px;
+    background-color: white;
+    margin: 10px 0px;
+    font-family: 'Lato', sans-serif;
+}
+
+#contents_section #items .item_content .item_image {
+    /*background-color: pink;*/
+    display: block;
+    float:left;
+    width: 20%;
+    box-sizing: border-box;
+}
+
+/*cannot get images to work from here, they disappear, so had to do img in html markup*/
+#contents_section #items .item_content .item_image li img {
+    width: 150px;
+    height: 120px;
+    /*background-image: url("http://placehold.it/150x120");*/
+}
+
+/* when uncommented, all goes south! */
+
+/*#contents_section #items .item_content .item_list {
+    background-color: purple;
+    display: block;
+    float: right;
+    width: 80%;
+    box-sizing: border-box;
+}*/
+
+#contents_section #items .item_content .item_list .item_heading {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#contents_section #items .item_content .item_list .item_status {
+    border: 1px solid red;
+    display: inline-block;
+    padding-right: 20px;
+    font-size: 15px;
+    opacity: 0.5;
+    /* don't know how to get the circles back, this does not work 
+    /*list-style-type: circle;*/
+}
+
+#contents_section #items .item_content .item_list .item_detail {
+    font-size: 15px;
+    padding-top: 30px;
+}
+
+/*FOOTER*/
+
+footer {  /*cannot get images to work from here, they disappear, so had to do img in html markup*/
+    opacity: 0.8;
+    text-align: center;
+    background-color: black;
+    /*background-image: url("/images/facebook_grey.svg");*/
+    /*background-image: url("/images/instagram_grey.svg");*/
+    /*background-repeat: no-repeat;*/
+    display: block;
+}
+
+footer img {
+    margin: 10px 0px;
+}

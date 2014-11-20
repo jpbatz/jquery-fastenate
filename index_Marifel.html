@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Fastenate | The World's Most Awesome Board of Stuff</title>
+    <link rel="stylesheet" href="/css/styles_Marifel.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+
+  <body>
+
+    <header id="header" class="clearfix">
+
+      <div class="header_bar clearfix">
+        <!-- Marifel: Instead of this, ... -->
+        <!-- <h1 id="h1-logo"><span>Fascenate</span></h1> -->
+
+        <!-- Marifel: ... write this: -->
+        <img id="h1-logo" src="/images/logo.svg" alt="Fastenate logo">
+
+        <!-- Marifel: Removed the div around the a -->
+        <a id="plus_button" href="#">+</a>
+      </div><!--.header_bar-->
+
+      <nav id="nav_bar">
+
+        <ul id="nav_items">
+          <li>RANDOM</li>
+          <li>MY BOARDS</li>
+          <li>GET THE APP</li>
+        </ul><!--#nav_items-->
+
+      </nav><!--#nav_bar-->
+
+    </header><!-- #header-->
+
+    <!-- Marifel: Remove all clearfixes.  The only thing you'll be
+    floating is, for each of the content boxes, the .item_image to
+    the left and the .item_list to the right.  Only .item_content will
+    need a clearfix class.  Also, the #items div is unnecessary since
+    you already have the #contents_section wrapper around all the
+    content. -->
+    <section id="contents_section" class="">
+
+      <div id="items" class="">
+
+          <!--could not get background-image to work from css only, so used img-->
+          <!-- Marifel: Using this as an example, change your ul and
+          li elements for the other content blocks to divs and spans,
+          an h3 and p tag. -->
+          <div class="item_content" class="clearfix">
+            <div class="item_image">
+              <img src="http://lorempixel.com/150/120/animals"></img>
+            </div><!--.item_image-->
+            <div class="item_list">
+              <h3 class="item_heading">Funny & Cute Animals Compilation 2014 New</h3>
+              <div class="item_info">
+                <span class="item_status">by funfunnycomic</span>
+                <span class="item_middot">&middot;</span>
+                <span class="item_status">4 months ago</span>
+                <span class="item_middot">&middot;</span>
+                <span class="item_status">680,636 views</span>
+              </div>
+              <p class="item_detail">Funny & Cute Animals Compilation 2014 New, Hilarious Animals Compilation 2014, Fun, funny, hilarious dogs, horses, goat, cats, ...</p>
+            </div><!--.item_list-->
+          </div><!--.item_content-->
+
+          <ul class="item_content" class="clearfix">
+            <ul class="item_image">
+              <li><img src="http://lorempixel.com/150/120/animals"></img></li>
+            </ul><!--.item_image-->
+            <ul class="item_list ">
+              <li class="item_heading">Top 10 Cutest Animal Videos</li>
+              <li class="item_status">by SpastiClips</li>
+              <li class="item_status">2 years ago</li>
+              <li class="item_status">501,174 views</li>
+              <li class="item_detail">PLEASE LIKE, COMMENT & SHARE - Thank you for your support! New Compilations of Fails and more every week in best...</li>
+            </ul><!--.item_list-->
+          </ul><!--.item_content-->
+
+          <ul class="item_content" class="clearfix">
+            <ul class="item_image">
+              <li><img src="http://lorempixel.com/150/120/animals"></img></li>
+            </ul><!--.item_image-->
+            <ul class="item_list">
+              <li class="item_heading">Animals Love Bath Time - Super Cute Compilation</li>
+              <li class="item_status">by MrFunnyMals</li>
+              <li class="item_status">1 year ago</li>
+              <li class="item_status">250,252 views</li>
+              <li class="item_detail">Most people think that animals just hate taking bath, but this super cute compilation will prove them wrong. These animals...</li>
+            </ul><!--.item_list-->
+          </ul><!--.item_content-->
+
+          <ul class="item_content" class="clearfix">
+            <ul class="item_image">
+              <li><img src="http://lorempixel.com/150/120/animals"></img></li>
+            </ul><!--.item_image-->
+            <ul class="item_list">
+              <li class="item_heading">Cute animals waking each other up - Funny animal compilation</li>
+              <li class="item_status">by Tiger Productions</li>
+              <li class="item_status">3 months ago</li>
+              <li class="item_status">1,910,984 views</li>
+              <li class="item_detail">It's so cute and funny when one animal wants to play with another who is tired and sleepy. Some sleepy animals are very patient ...</li>
+            </ul><!--.item_list-->
+          </ul><!--.item_content-->
+
+      </div><!-- #items .clearfix -->
+
+    </section><!--#contents_section-->
+
+    <footer>
+      <!--could not get to work from css only, so used img-->
+      <!-- Marifel: We need to make these background images for the hover
+      to take effect, I'll show you later. -->
+      <img src="/images/facebook_grey.svg"></img>
+      <img src="/images/instagram_grey.svg"></img>
+    </footer>
+
+  </body>
+
+</html>
