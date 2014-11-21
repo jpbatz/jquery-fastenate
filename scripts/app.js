@@ -1,14 +1,64 @@
 $(function() {
   // Write all your code here
-  function viewBlogPosts() {
+  function viewBlogPosts(blogResponse) {
+    console.log(blogResponse);
+        // array of mongodb documents (json objects)
+        for(var i=0; i<blogResponse.length; i++) {
+          var jason_doc = blogResponse[i];
+          console.log(jason_doc.author);
+          
+          // <div class="item_content">
+          //   <div class="item_list">
+          //     <p class=""></p>
+          //   </div><!--.item_list-->
+          // </div><!--.item_content-->
 
+          var item_content = $('<div>', {class:'item_content clearfix'});
+          var item_list = $('<div>', {class:'item_list'});
+          item_content.append(item_list);
+
+          var title_p_element = $('<p></p>');
+          title_p_element.html(jason_doc.title);
+          item_list.append(title_p_element);
+          
+
+          var author_p_element = $('<p></p>');
+          author_p_element.html(jason_doc.author);
+          item_list.append(author_p_element);
+
+
+          var date_p_element = $('<p></p>');
+          date_p_element.html(jason_doc.created_at);
+          item_list.append(date_p_element);
+
+
+          var views_p_element = $('<p></p>');
+          views_p_element.html(jason_doc.views);
+          item_list.append(views_p_element);
+
+
+          var body_p_element = $('<p></p>');
+          body_p_element.html(jason_doc.body);
+          item_list.append(body_p_element);
+
+
+          var thumbnail_p_element = $('<p></p>');
+          thumbnail_p_element.html(jason_doc.thumbnail);
+          item_list.append(thumbnail_p_element);
+
+
+          $('#items').append(item_content);
+
+        }
   }
 
-  function viewStudents() {
-
+  function viewStudents(studentResponse) {
+    console.log(studentResponse);
   }
 
-  $("#nav_items #blogs").on("click", function() {
+
+  $("#nav_items #blogs").on("click", function(event) {
+    event.preventDefault();
 
     $.ajax({
       type: "GET",
@@ -18,10 +68,14 @@ $(function() {
         // Query string data from the url goes here (the part after the question mark ? in a url)
         "apiKey": "QMnw2qjgl4l0LDx3RbN2NRlMEu_vCipC"
       },
+
       success: function(response) {
-        console.log(response); // See what it prints out
-        // Call the appropriate function here, viewBlogPosts or viewStudents
+        // console.log(response); // See what it prints out
+        // Call the appropriate function here, viewBlogPosts
+        // returns an array of MongoDB Documents (JSON objects)
+        viewBlogPosts(response);
       },
+
       error: function(request, errorType, errorMessage) {
         console.log("ERROR: " + errorMessage);
       }
@@ -44,7 +98,11 @@ $(function() {
 
   });
 
-  $("#nav_items #students").on("click", function() {
+
+
+  $("#nav_items #students").on("click", function(event) {
+    event.preventDefault();
+
     $.ajax({
       type: "GET",
       url: "https://api.mongolab.com/api/1/databases/devleague_jquery/collections/students",
@@ -54,8 +112,9 @@ $(function() {
         "apiKey": "QMnw2qjgl4l0LDx3RbN2NRlMEu_vCipC"
       },
       success: function(response) {
-        console.log(response); // See what it prints out
-        // Call the appropriate function here, viewBlogPosts or viewStudents
+        // console.log(response); // See what it prints out
+        // Call the appropriate function here, viewStudents
+        viewStudents(response);
       },
       error: function(request, errorType, errorMessage) {
         console.log("ERROR: " + errorMessage);
