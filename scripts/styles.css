@@ -198,7 +198,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 }
 
 #items {
-    background-color: yellow;
+    background-color: silver;
     margin: auto;
 }
 
@@ -212,7 +212,7 @@ thead tr {
 
 td {
     border: 2px solid black;
-    padding-right: 20px;
+    padding-right: 53px;
 }
 
 
