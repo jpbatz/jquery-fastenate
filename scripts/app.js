@@ -13,13 +13,18 @@ $(function() {
   // date.getMonth(); // Returns an integer between 0 (January) and 11 (December)
   // date.getDate(); // Returns an integer between 1 and 31
   // date.getFullYear(); // Returns the year
-  // Use jQuery DOM element creation to insert this information into the main content div or section of your page
+  // Use jQuery DOM element creation to insert this information into the main content 
+  // div or section of your page
 
   function viewBlogPosts(blogResponse) {
 
     console.log(JSON.stringify(blogResponse));
 
+    // use jQuery to clear all of the main content blocks
+    $('#items').empty();
+
     for(var i=0; i<blogResponse.length; i++) {
+
       var json_doc = blogResponse[i];
       console.log(json_doc.author);
       
@@ -34,32 +39,33 @@ $(function() {
       item_content.append(item_list);
 
       var title_p_element = $('<p></p>');
-      title_p_element.html(json_doc.title);
+      title_p_element.html("<strong>Title: </strong>" + json_doc.title);
       item_list.append(title_p_element);
       
 
       var author_p_element = $('<p></p>');
-      author_p_element.html(json_doc.author);
+      author_p_element.html("<strong>Author: </strong>" + json_doc.author);
       item_list.append(author_p_element);
 
+      var date = new Date(json_doc.created_at);
+      var simple_date = date.getMonth() + '&sol;' + date.getDate().toString() + '&sol;' + date.getFullYear().toString(); 
 
       var date_p_element = $('<p></p>');
-      date_p_element.html(json_doc.created_at);
+      date_p_element.html("<strong>Date: </strong>" + simple_date);
       item_list.append(date_p_element);
 
 
       var views_p_element = $('<p></p>');
-      views_p_element.html(json_doc.views);
+      views_p_element.html("<strong>Views: </strong>" + json_doc.views);
       item_list.append(views_p_element);
 
 
       var body_p_element = $('<p></p>');
-      body_p_element.html(json_doc.body);
+      body_p_element.html("<strong>Summary: </strong>" + json_doc.body);
       item_list.append(body_p_element);
 
-
-      var thumbnail_p_element = $('<p></p>');
-      thumbnail_p_element.html(json_doc.thumbnail);
+      var thumbnail_url = json_doc.thumbnail;
+      var thumbnail_p_element = $('<img>', { src: thumbnail_url});
       item_list.append(thumbnail_p_element);
 
 
@@ -70,6 +76,7 @@ $(function() {
 
 
   $("#nav_items #blogs").on("click", function(event) {
+
     event.preventDefault();
 
     $.ajax({
@@ -80,14 +87,12 @@ $(function() {
         // Query string data from the url goes here (the part after the question mark ? in a url)
         "apiKey": "QMnw2qjgl4l0LDx3RbN2NRlMEu_vCipC"
       },
-
       success: function(response) {
         // console.log(response); // See what it prints out
         // returns an array of MongoDB Documents (JSON objects)
         // Call the appropriate function here, viewBlogPosts
         viewBlogPosts(response);
       },
-
       error: function(request, errorType, errorMessage) {
         console.log("ERROR: " + errorMessage);
       }
@@ -98,6 +103,7 @@ $(function() {
 
   
   function viewStudents(studentResponse) {
+
     console.log(JSON.stringify(studentResponse));
 
     // use jQuery to clear all of the main content blocks
@@ -105,10 +111,6 @@ $(function() {
 
     // will return an array of 30 JSON objects
     // students = first_name, last_name, year, and major
-
-    
-
-
 
     // Instead of the main content structure you had before this exercise, 
     //   display the student data using table elements. For example:
@@ -174,6 +176,7 @@ $(function() {
 
     
     for(var i=0; i<studentResponse.length; i++) {
+
       var json_doc = studentResponse[i];
       // console.log(json_doc.first_name + " " + json_doc.last_name + " " + json_doc.year + " " + json_doc.major);
 
@@ -205,10 +208,9 @@ $(function() {
       table_body_detail_major.html(major);
 
       //     </tr>
-    table_body.append(table_body_row);
+      table_body.append(table_body_row);
 
     }
-
 
     //   </tbody>
     table.append(table_body);
@@ -219,6 +221,7 @@ $(function() {
 
 
   $("#nav_items #students").on("click", function(event) {
+    
     event.preventDefault();
 
     $.ajax({
@@ -242,7 +245,6 @@ $(function() {
   });
 
  
-
   // When a user clicks on "Blogs", use jQuery to clear all of the main content blocks. 
   // Then create an asynchronous GET request to the REST server for Blogs using Ajax. 
   // This will return an array of 10 JSON objects representing students. 
